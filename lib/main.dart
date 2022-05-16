@@ -23,11 +23,43 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.red[600],
       ),
       body:Column(
+        //my own style!
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text('hello'),
+              Text('world'),
+              Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(20.0),
+                    color: Colors.cyan,
+                    child: Text('inside ROW'),
+                  ),
+                ],
+              ),
+              Text('bye'),
+              Text('ciaO'),
+            ],
+          ),
           Container(
-            padding: EdgeInsets.all(20.0),
+            padding: EdgeInsets.all(40.0),
             color: Colors.cyan,
             child: Text('first container'),
+          ),
+          Container(
+            padding: EdgeInsets.all(40.0),
+            color: Colors.blueGrey,
+            child: Text('second container'),
+          ),
+          Container(
+            padding: EdgeInsets.all(40.0),
+            color: Colors.redAccent,
+            child: Text('third container'),
           ),
 
         ],
