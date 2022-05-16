@@ -22,46 +22,36 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body:Column(
-        //my own style!
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+      body:Row(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text('hello'),
-              Text('world'),
-              Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(20.0),
-                    color: Colors.cyan,
-                    child: Text('inside ROW'),
-                  ),
-                ],
-              ),
-              Text('bye'),
-              Text('ciaO'),
-            ],
+          Expanded(
+              flex: 3,
+              child: Image.asset("assets/dario-bronnimann-cNbFXaZMl10-unsplash.jpg")
           ),
-          Container(
-            padding: EdgeInsets.all(40.0),
-            color: Colors.cyan,
-            child: Text('first container'),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.all(30.0),
+              color: Colors.cyan,
+              child: Text("1"),
+            ),
           ),
-          Container(
-            padding: EdgeInsets.all(40.0),
-            color: Colors.blueGrey,
-            child: Text('second container'),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.all(30.0),
+              color: Colors.cyanAccent,
+              child: Text("2"),
+            ),
+          ), 
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.all(30.0),
+              color: Colors.cyan[900],
+              child: Text("3"),
+            ),
           ),
-          Container(
-            padding: EdgeInsets.all(40.0),
-            color: Colors.redAccent,
-            child: Text('third container'),
-          ),
-
         ],
       ),
       floatingActionButton: FloatingActionButton(
