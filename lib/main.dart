@@ -4,12 +4,14 @@ void main() => runApp(MaterialApp(
   home:Home(),
 ));
 
+//statelessWidget allow us to rerender the app whenever changes are saved
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //color of the app screen
+      backgroundColor: Colors.grey[900],
       appBar: AppBar(
         title: Text(
           'my first app',
@@ -20,45 +22,85 @@ class Home extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.red[600],
+        backgroundColor: Colors.grey[850],
+        elevation: 0.0,
       ),
-      body:Row(
-        children: [
-          Expanded(
-              flex: 3,
-              child: Image.asset("assets/dario-bronnimann-cNbFXaZMl10-unsplash.jpg")
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              padding: EdgeInsets.all(30.0),
-              color: Colors.cyan,
-              child: Text("1"),
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //Avatar
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/robert-wiedemann-xwdWtPpKDeU-unsplash.jpg'),
+                radius: 40.0,
+              ),
             ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              padding: EdgeInsets.all(30.0),
-              color: Colors.cyanAccent,
-              child: Text("2"),
+            Divider(
+              height: 80.0,
+              color: Colors.grey[800],
             ),
-          ), 
-          Expanded(
-            flex: 1,
-            child: Container(
-              padding: EdgeInsets.all(30.0),
-              color: Colors.cyan[900],
-              child: Text("3"),
+            Text(
+                'NAME',
+              style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 2.0,
+              ),
             ),
-          ),
-        ],
+            //add space beetween widgets
+            SizedBox(height: 10.0,),
+            Text(
+              '@Khaditafzka',
+              style: TextStyle(
+                color: Colors.deepOrange,
+                letterSpacing: 2.0,
+                fontWeight: FontWeight.bold,
+                fontSize: 28.0
+              ),
+            ),
+            SizedBox(height: 30.0,),
+            Text(
+              'current Ninja Level',
+              style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 2.0,
+              ),
+            ),
+            //add space beetween widgets
+            SizedBox(height: 10.0,),
+            Text(
+              '6',
+              style: TextStyle(
+                  color: Colors.deepOrange,
+                  letterSpacing: 2.0,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 28.0
+              ),
+            ),
+            SizedBox(height: 30.0,),
+            Row(
+              children: [
+                Icon(
+                  Icons.mail,
+                  color: Colors.blueGrey[200],
+                ),
+                SizedBox(width: 10.0,),
+                Text(
+                  'khadija231@outlook.com',
+                  style: TextStyle(
+                    color: Colors.blueGrey[200],
+                    fontSize: 18.0,
+                    letterSpacing: 1.0
+                  ),
+                )
+              ],
+            ),
+
+          ],
+        ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Text('click'),
-        onPressed: () {},
-        backgroundColor: Colors.red[600],
-      ),
+
     );
   }
 }
