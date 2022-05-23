@@ -11,6 +11,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
 
   //int counter = 0;
   //async await like JS
+/*
   void getState() async{
     //Simulate Network request to get username
     //Future.delayed = setTimeout js
@@ -30,6 +31,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
     getState();
 
   }
+*/
 
   @override
   Widget build(BuildContext context) {
